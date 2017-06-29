@@ -62,7 +62,7 @@ fetch(REQUEST_URL)
     }
 
     return (
-       <UIExplorerPage
+  /*     <UIExplorerPage
         noSpacer={true}
         toolbarActions = {toolbarActions}
         language={this.state.language}
@@ -84,7 +84,7 @@ fetch(REQUEST_URL)
            }
           }
         noScroll={true}>
-
+*/
         <ListView
         dataSource={this.state.dataSource}
         renderRow={this.renderData.bind()}
@@ -92,11 +92,10 @@ fetch(REQUEST_URL)
         renderSeparator={this._renderSeparator}
         enableEmptySections={true}
         automaticallyAdjustContentInsets={false}
-        keyboardShouldPersistTaps={true}
         showsVerticalScrollIndicator={false}
 
       /> 
- </UIExplorerPage>
+// </UIExplorerPage>
     );
   },
 
