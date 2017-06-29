@@ -16,7 +16,7 @@ const Routes = ({loading, needSignIn}) => (
         <Router createReducer={reducerCreate}>
             <Scene key="loginPage" initial={needSignIn} component={LoginPage} title="Login" type="reset"/>
 
-            <Scene key="homePage" initial={!needSignIn} component={ProfilePage} title="Home" type="replace"/>
+            <Scene key="homePage" initial={!needSignIn} component={Questions} title="Home" type="replace"/>
             <Scene key="profilePage" component={ProfilePage} title="Profile"/>
         </Router>
 );
