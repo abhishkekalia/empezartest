@@ -45,7 +45,7 @@ const loginFail = error => {
 
 export const logout = () => {
     return dispatch => {
-        routes.openProfile();
+        routes.loginPage();
         dispatch({
             type: AUTH_LOGOUT
         });

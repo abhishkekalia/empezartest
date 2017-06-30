@@ -4,49 +4,43 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity
 } from 'react-native';
+import Questions from './questionlist/questionlist';
+import ProfilePage from './profile/ProfilePage';
 
-import { StackNavigator } from 'react-navigation';
+import { TabNavigator, TabBarBottom } from 'react-navigation';
 
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Home',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('./q.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),
   };
 
   render() {
     return (
-      <Button
+      <View>
+      <TouchableOpacity
         onPress={() => this.props.navigation.navigate('Notifications')}
-        title="Go to notifications"
       />
+      <Text>hello home</Text>
+      </View>
     );
   }
 }
 
 class MyNotificationsScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'Notifications',
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('./notif-icon.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),
+    tabBarLabel: 'Chat',
   };
 
   render() {
     return (
-      <Button
+    <View>
+      <TouchableOpacity
         onPress={() => this.props.navigation.goBack()}
-        title="Go back home"
       />
+      <Text>this is Notifications</Text>
+      </View>
     );
   }
 }
@@ -60,12 +54,17 @@ const styles = StyleSheet.create({
 
 const MyApp = TabNavigator({
   Home: {
-    screen: MyHomeScreen,
+    screen: Questions,
   },
   Notifications: {
-    screen: MyNotificationsScreen,
+    screen: ProfilePage,
   },
-}, {
+},
+{
+    tabBarComponent: TabBarBottom,
+    tabBarPosition: 'bottom',
+},
+{
   tabBarOptions: {
     activeTintColor: '#e91e63',
   },

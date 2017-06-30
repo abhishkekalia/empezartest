@@ -12,7 +12,6 @@ import {
   View
 } from 'react-native';
 import Root from './appredux/Root';
-import MyApp from './appredux/MyHomeScreen';
 
 export default class EmpezarTest extends Component {
   render() {
@@ -52,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('EmpezarTest', () => MyApp);
+AppRegistry.registerComponent('EmpezarTest', () => Root);

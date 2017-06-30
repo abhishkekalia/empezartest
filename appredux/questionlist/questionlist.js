@@ -50,7 +50,7 @@ fetch(REQUEST_URL)
           loaded: true,
         });
       })
-      .done(); 
+      .done();
     },
 
   render: function() {

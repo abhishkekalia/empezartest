@@ -6,7 +6,8 @@ import HomePage from './home/HomePage';
 import LoginPage from './auth/LoginPage';
 import ProfilePage from './profile/ProfilePage';
 import Loader from './common/Loader';
-import Questions from './questionlist/questionlist';
+import MyApp from './MyHomeScreen';
+
 
 const reducerCreate = params => (state, action) => Reducer(params)(state, action);
 
@@ -16,7 +17,7 @@ const Routes = ({loading, needSignIn}) => (
         <Router createReducer={reducerCreate}>
             <Scene key="loginPage" initial={needSignIn} component={LoginPage} title="Login" type="reset"/>
 
-            <Scene key="homePage" initial={!needSignIn} component={Questions} title="Home" type="replace"/>
+            <Scene key="homePage" initial={!needSignIn} component={MyApp} title="Home" type="replace"/>
             <Scene key="profilePage" component={ProfilePage} title="Profile"/>
         </Router>
 );
