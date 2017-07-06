@@ -5,16 +5,16 @@ export const AUTH_LOGIN_SUCCESS = 'AUTH_LOGIN_SUCCESS';
 export const AUTH_LOGIN_FAIL = 'AUTH_LOGIN_FAIL';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 
-export const login = username => {
+export const login = (username, email) => {
     return dispatch => {
         dispatch(loginStart());
 
         setTimeout(() => {
-            if (username.length) {
+            if (email.length) {
                 routes.homePage();
-                return dispatch(loginSuccess(username));
+                return dispatch(loginSuccess(email));
             }
-            return dispatch(loginFail(new Error('username field is required')));
+            return dispatch(loginFail(new Error('username field is required'), new Error('email field is required')));
         }, Math.random() * 1000 + 500)
     };
 };

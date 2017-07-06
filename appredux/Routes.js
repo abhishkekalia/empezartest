@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Scene, Reducer, Router, Actions as routes} from 'react-native-router-flux'
+import {Scene, Reducer, Router, Actions as routes} from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
 import HomePage from './home/HomePage';

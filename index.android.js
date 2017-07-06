@@ -12,6 +12,7 @@ import {
   View
 } from 'react-native';
 import Root from './appredux/Root';
+import LottieAnimatedExample from './appredux/questionlist/LottieAnimatedExample'
 
 export default class EmpezarTest extends Component {
   render() {

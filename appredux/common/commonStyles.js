@@ -20,12 +20,12 @@ module.exports = {
         height: 40,
         padding: 10,
         marginBottom: 10,
-        borderColor: 'orange',
+        borderColor: '#1e90ff',
         borderWidth: 1,
         borderStyle: 'solid'
     },
     label: {
-        color: 'orange',
+        color: '#1e90ff',
         padding: 5,
         fontWeight: "700",
         fontStyle: 'italic'

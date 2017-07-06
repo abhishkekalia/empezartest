@@ -6,7 +6,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import Questions from './questionlist/questionlist';
+import SimpleApp from './questionlist/questionlist';
 import ProfilePage from './profile/ProfilePage';
 
 import { TabNavigator, TabBarBottom } from 'react-navigation';
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 
 const MyApp = TabNavigator({
   Home: {
-    screen: Questions,
+    screen: SimpleApp,
   },
   Notifications: {
     screen: ProfilePage,

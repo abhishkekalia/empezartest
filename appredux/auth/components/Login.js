@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {StyleSheet, View, Text, TextInput, TouchableOpacity, ToastAndroid} from 'react-native';
+import {StyleSheet, View, Text, TextInput, TouchableOpacity, ToastAndroid, ActivityIndicator} from 'react-native';
 import Button from 'app/common/Button';
 import Loader from 'app/common/Loader';
 import {container, content, input, errorText} from 'app/common/commonStyles';
@@ -22,11 +22,13 @@ class Login extends Component {
         this.state = {
             username : '',
             email   : '',
-            loading: true,
+            loading: false,
         }    }
 
     render() {
         const {errorStatus, loading} = this.props;
+        
+
         return (
             <View style={[styles.container, styles.content]}>
                 <TextInput style={styles.input}
@@ -49,13 +51,15 @@ class Login extends Component {
                     Login
                 </Button>
                 {errorStatus ? <Text style={styles.errorText}>{errorStatus}</Text> : undefined}
-                {loading ? <Loader/> : undefined}
+                {this.state.loading ? <ActivityIndicator color="#1e90ff" size="large"/> : undefined}
+               
             </View>
         );
     }
+    
 
     onSubmit(username, email) {
-        this.props.login(this.state.username);
+        this.props.login(username,email);
         this.setState({loading : true});
         var http = new XMLHttpRequest();
 
@@ -75,7 +79,7 @@ class Login extends Component {
             if (http.status === 200) {
                 obj = JSON.parse(http.responseText);
               //  var u_id = obj.status.msg;
-                console.warn(obj['msg']);
+                    ToastAndroid.show(this.state.username, ToastAndroid.LONG);
             } else {
                     ToastAndroid.show("Network Error", ToastAndroid.LONG);
              }};
