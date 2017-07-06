@@ -82,10 +82,10 @@ var Questions = React.createClass({
         refreshControl={
           <RefreshControl
             refreshing={this.state.refreshing}
-            onRefresh={this._onRefresh.bind(this)} />
+            onRefresh={this._onRefresh} />
         }
         dataSource={this.state.dataSource}
-        renderRow={this.renderData.bind()}
+        renderRow={this.renderData}
         renderSeparator={this._renderSeparator}
         enableEmptySections={true}
         automaticallyAdjustContentInsets={false}
@@ -106,7 +106,7 @@ var Questions = React.createClass({
     renderData: function(que_ans, rowData, sectionID, rowID, index) {
         const { navigate } = this.props.navigation;
         return (
-            <TouchableOpacity key={rowID} data={rowData} onPress={() => navigate('Chat', { feed: que_ans.feed, detail : que_ans.detail , source : que_ans.source, time : que_ans.time  })}>
+            <TouchableOpacity key={rowID} data={rowData} onPress={() => navigate('Detail', { feed: que_ans.feed, detail : que_ans.detail , source : que_ans.source, time : que_ans.time  })}>
             <View style={styles.row}>
             <View>
             <Image style={styles.thumb} source={require('./Icone/avatar.png')} />
@@ -179,14 +179,14 @@ var styles = StyleSheet.create({
         fontWeight  : 'bold'
     },
     detail: {
-        paddingTop : 5,
-        paddingBottom : 5,
+        padding : 10,
         backgroundColor : '#fff',
-        minHeight : 500
+        minHeight : 500,
+        fontWeight : 'bold'
     }
 });
 
-class ChatScreen extends React.Component {
+class DetailScreen extends React.Component {
     render() {
             const { params } = this.props.navigation.state;
 
@@ -197,7 +197,7 @@ class ChatScreen extends React.Component {
             <Text style={{ paddingLeft: 20, color : '#a9a9a9'}} >{params.source} {params.time}</Text>
             </View>
 
-            <Text style={styles.detail}>{params.detail}</Text>
+            <Text style={styles.detail}>Detail : {params.detail}</Text>
             </ScrollView>
         );
     }
@@ -205,7 +205,7 @@ class ChatScreen extends React.Component {
 
 const SimpleApp = StackNavigator({
     Question: { screen: Questions },
-    Chat: { screen: ChatScreen },
+    Detail: { screen: DetailScreen },
 });
 
 module.exports = SimpleApp;

@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('EmpezarTest', () => Root);
+AppRegistry.registerComponent('EmpezarTest', () => LottieAnimatedExample);
