@@ -4,6 +4,7 @@ import {
   View,
   Animated,
   StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 import Animation from 'lottie-react-native';
 import PlayerControls from './PlayerControls';
@@ -93,15 +94,17 @@ export default class LottieAnimatedExample extends React.Component {
         }}
       >
         <View>
+        <TouchableOpacity onPress={this.onPlayPress}>
           <Animation
             ref={this.setAnim}
             style={{
-              width: 200,
-              height: 200,
+              width: 400,
+              height: 400,
             }}
             source={EXAMPLES[this.state.example].getJson()}
             progress={this.state.progress}
           />
+          </TouchableOpacity>
         </View>
       </View>
     );

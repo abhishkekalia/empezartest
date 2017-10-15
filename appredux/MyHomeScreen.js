@@ -28,4 +28,5 @@ const MyApp = TabNavigator({
     activeTintColor: '#e91e63',
   },
 });
+
 module.exports = MyApp;
