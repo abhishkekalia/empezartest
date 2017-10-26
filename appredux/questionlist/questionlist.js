@@ -209,7 +209,3 @@ const SimpleApp = StackNavigator({
 });
 
 module.exports = SimpleApp;
-//module.exports = Questions;
-/*
-https://reactnavigation.org/docs/intro/
-*/

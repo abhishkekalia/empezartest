@@ -11,7 +11,7 @@ import ProfilePage from './profile/ProfilePage';
 
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 
-const MyApp = TabNavigator({
+const Homepage = TabNavigator({
   Home: {
     screen: SimpleApp,
   },
@@ -29,4 +29,4 @@ const MyApp = TabNavigator({
   },
 });
 
-module.exports = MyApp;
+module.exports = Homepage;
